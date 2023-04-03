@@ -48,7 +48,6 @@ g = { a = "code_action" } # Maps `ga` to show possible code actions
 [keys.normal."space"]
 "c" = ["toggle_comments"]
 "q" = [":buffer-close"]
-"w" = { "q" = [":q"]}
 "w" = { "w" = [":w"]}
 
 [keys.select]
