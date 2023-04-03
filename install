@@ -20,6 +20,9 @@ ln -s $DOTFILES/lazygit $HOME/.config/lazygit
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
 
+rm -rf $HOME/stubs
+ln -s $DOTFILES/stubs $HOME/stubs
+
 ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 ln -sf $DOTFILES/zsh/zsh_aliases $HOME/.zsh_aliases
