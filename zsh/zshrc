@@ -23,6 +23,7 @@ export KEYTIMEOUT=15
 
 typeset -U path cdpath fpath
 path=(
+    $HOME/.local/diff-so-fancy
     $HOME/.config/helix/bin
     $HOME/.config/helix/snippets/html
     $HOME/.config/helix/snippets/php
