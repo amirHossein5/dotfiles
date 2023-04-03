@@ -5,8 +5,6 @@
     More: https://www.sublimetext.com/docs/completions.html#snippets
 -->
 <content><![CDATA[
-<?php
-
 namespace App\\${1};
 
 class ${2}
