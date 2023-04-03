@@ -1,0 +1,16 @@
+// Settings in here override those in "/JsPrettier/JsPrettier.sublime-settings",
+
+{
+    "auto_format_on_save": false,
+    "additional_cli_args": {
+        "--config": "~/prettier.json",
+    },
+    "node_path": "~/.nvm/versions/node/v18.12.1/bin/node",
+    "prettier_cli_path": "~/.nvm/versions/node/v18.12.1/bin/prettier",
+    "auto_format_on_save_excludes": [
+        "*/node_modules/*",
+        "*/vendor/*",
+        "*.min.js",
+        "*.min.css",
+    ],
+}

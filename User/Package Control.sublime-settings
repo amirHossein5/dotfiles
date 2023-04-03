@@ -1,0 +1,40 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"All Autocomplete",
+		"auto-save",
+		"ayu",
+		"Color Highlight",
+		"DocBlockr",
+		"FileManager",
+		"GitHub Theme",
+		"gruvbox",
+		"Inspired GitHub Color Scheme",
+		"JsPrettier",
+		"Laravel Blade Highlighter",
+		"LSP",
+		"LSP-intelephense",
+		"Multicommand",
+		"Package Control",
+		"PHP Companion",
+		"PHPUnitKit",
+		"polyfill",
+		"ScrollOffset",
+		"SnippetMaker",
+		"SublimeLinter",
+		"SublimeLinter-php",
+		"Surround",
+		"Tailwind CSS Autocomplete",
+		"Theme - Afterglow",
+		"Vintage Surround",
+	],
+	// "http_proxy": "localhost:9050",
+	"repositories":
+	[
+	],
+}
