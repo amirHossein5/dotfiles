@@ -5,7 +5,7 @@
     More: https://www.sublimetext.com/docs/completions.html#snippets
 -->
 <content><![CDATA[
-protected static function ${1:name}(${2}):${3}
+protected static function ${1}(${2}): ${3}
 {
     ${4}
 }
