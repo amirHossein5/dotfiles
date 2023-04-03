@@ -29,5 +29,5 @@
 	"index_exclude_gitignore": false,
 	"show_sidebar_button": false,
 	"theme": "Adaptive.sublime-theme",
-	"color_scheme": "Packages/Theme - Afterglow/Afterglow-markdown.tmTheme",
+	"color_scheme": "gruvbox (Light) (Hard).sublime-color-scheme",
 }
