@@ -1,0 +1,4 @@
+echo     "public static function name(): "
+echo "    {"
+echo "    "
+echo "    }"

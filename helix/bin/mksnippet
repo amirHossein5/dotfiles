@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+LANGUAGE=$1;
+NAME=$2;
+
+[[ -z "$LANGUAGE" ]] && echo "no language specified" && exit 1;
+[[ -z "$NAME" ]] && echo "no snippet name" && exit 1;
+
+DIR="${HOME}/.config/helix/snippets/${LANGUAGE}"
+PATH="${DIR}/${NAME}";
+
+/usr/bin/mkdir -p "${DIR}" && 
+  /usr/bin/touch "${PATH}" && 
+  /usr/bin/chmod u+x "${PATH}" && 
+  echo "touched: ${PATH}" && 
+  /usr/bin/hx "${PATH}";
+
+exit 0;

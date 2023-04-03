@@ -1,0 +1,6 @@
+echo "namespace \App"
+echo ""
+echo "class Foo extends Bar"
+echo "{"
+ehco ""
+echo "}"

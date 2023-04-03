@@ -1,0 +1,4 @@
+echo     "protected static function name(): "
+echo "    {"
+echo "    "
+echo "    }"

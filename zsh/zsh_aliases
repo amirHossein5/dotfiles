@@ -1,0 +1,75 @@
+alias lg='lazygit'
+alias clearVim='rm -rf ~/.config/nvim; rm -rf ~/.local/share/nvim'
+alias h="hx"
+alias vim="nvim"
+alias copy="xclip -selection clipboard"
+alias paste="xclip -o -selection clipboard"
+alias cat="bat --color=never"
+alias webcam="gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2"
+alias sail='[ -f sail ] && sail || vendor/bin/sail'
+alias kt='kitty +kitten themes'
+
+# Laravel
+alias pa="php artisan"
+alias pas="php artisan serve"
+## database
+alias pam="php artisan migrate"
+alias pamf="php artisan migrate:fresh"
+alias pamfs="php artisan migrate:fresh --seed"
+alias pamr="php artisan migrate:rollback"
+alias pads="php artisan db:seed"
+## makers
+alias pamm="php artisan make:model"
+alias pamc="php artisan make:controller"
+alias pamt="php artisan make:test"
+alias pams="php artisan make:seeder"
+alias pamf="php artisan make:factory"
+alias pamp="php artisan make:policy"
+alias pame="php artisan make:event"
+alias paml="php artisan make:listener"
+alias pamj="php artisan make:job"
+alias pamn="php artisan make:notification"
+## clears
+alias pacac="php artisan cache:clear"
+alias pacoc="php artisan config:clear"
+alias pavic="php artisan view:clear"
+alias paroc="php artisan route:clear"
+alias paop="php artisan optimize"
+alias paopc="php artisan optimize:clear"
+## queues
+alias paqf="php artisan queue:failed"
+alias paqft="php artisan queue:failed-table"
+alias paql="php artisan queue:listen"
+alias paqr="php artisan queue:retry"
+alias paqt="php artisan queue:table"
+alias paqw="php artisan queue:work"
+
+# Composer
+alias c="composer"
+alias ccp="composer create-project"
+alias cduo="composer dump-autoload -o"
+alias cdu="composer dump-autoload"
+alias cgr="composer global require"
+alias cgrm="composer global remove"
+alias cgu="composer global update"
+alias ci="composer install"
+alias co="composer outdated"
+alias cod="composer outdated --direct"
+alias cr="composer require"
+alias crm="composer remove"
+alias cs="composer show"
+alias csu="composer self-update"
+alias cu="composer update"
+
+# Tmux
+alias ta="tmux attach -t"
+alias tad="tmux attach -d -t"
+alias ts="tmux new-session -s"
+alias tl="tmux list-sessions"
+alias tksv="tmux kill-server"
+alias tkss="tmux kill-session -t"
+
+# Docker
+alias d="docker"
+alias dc="docker compose"
+
