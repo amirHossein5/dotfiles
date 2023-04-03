@@ -1,0 +1,17 @@
+<snippet>
+<!--
+    Fields: $field_number or ${field_number:default_text}, e.g. $1 or ${1:name}
+    Variables: $variable or ${variable/regex/replace/flags}, e.g. $TM_FILEPATH
+    More: https://www.sublimetext.com/docs/completions.html#snippets
+-->
+<content><![CDATA[
+/** @test */
+public function ${1}(): void
+{
+    ${2}
+}
+]]></content>
+<tabTrigger>ptest</tabTrigger>
+<description>empty phpunit test function</description>
+<scope>embedding.php, text.html.php, meta.embedded.php, source.php.embedded.html, comment.block.documentation.phpdoc.php, punctuation.definition.comment.begin.php</scope>
+</snippet>
