@@ -6,9 +6,10 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 VI_MODE_SET_CURSOR=true
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 plugins=(
-    vi-mode
+    zsh-vi-mode    
     z
 )
 
@@ -45,6 +46,7 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
     'local-directories named-directories'
 
 export EDITOR=hx
+export ZVM_VI_EDITOR=hx 
 export GIT_EDITOR=hx
 
 unsetopt sharehistory
