@@ -40,13 +40,6 @@
     { "keys": ["escape"], "command": "exit_insert_mode", "context": [{ "key": "setting.command_mode", "operand": false }, { "key": "setting.is_widget", "operand": false } ] },
     { "keys": ["x"], "command": "enter_visual_line_mode", "context": [{"key": "setting.command_mode"}] },
     { "keys": ["j", "k"], "command": "exit_insert_mode", "context": [{ "key": "setting.command_mode", "operand": false }, { "key": "setting.is_widget", "operand": false } ] },
-    { "keys": [";", ";"], "command": "multicommand", "args": {
-        "commands": [
-            {"command": "insert", "args": {"characters": ";"}},
-            {"command": "exit_insert_mode", "context": [{ "key": "setting.command_mode", "operand": false }, { "key": "setting.is_widget", "operand": false } ]},
-        ]
-    } },
-    { "keys": ["R"], "command": "multicommand", "args": {
         "commands": [
             {"command": "right_delete"},
             {"command": "vi_paste_right"}
