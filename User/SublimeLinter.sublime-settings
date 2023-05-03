@@ -12,7 +12,7 @@
             //   In theme Default: warning, error, cog, x,
             //   and diamond, heart, pointer, square, star, triangle, which all
             //   also have an -outline variant.
-            "icon": "circle",
+            "icon": "none",
 
             // The highlight style:
             // - "none"
