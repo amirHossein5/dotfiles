@@ -13,6 +13,19 @@
     { "keys": ["alt+q"], "command": "exit" },
     { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
 
+    { "keys": ["ctrl+shift+."], "command": "insert", "args": {"characters": "\t"} },
+    { "keys": ["ctrl+shift+."], "command": "reindent", "context": [{ "key": "setting.auto_indent", "operator": "equal", "operand": true }, { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }, { "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true }, { "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true } ] },
+    { "keys": ["ctrl+shift+."], "command": "indent", "context": [{ "key": "text", "operator": "regex_contains", "operand": "\n" }] },
+    { "keys": ["ctrl+shift+."], "command": "move", "args": {"by": "lines", "forward": true}, "context": [{ "key": "overlay_has_focus", "operator": "equal", "operand": true  } ] },
+    { "keys": ["ctrl+shift+."], "command": "next_field", "context": [{ "key": "has_next_field", "operator": "equal", "operand": true }] },
+
+    { "keys": ["ctrl+shift+,"], "command": "insert", "args": {"characters": "\t"} },
+    { "keys": ["ctrl+shift+,"], "command": "unindent", "context": [{ "key": "setting.shift_tab_unindent", "operator": "equal", "operand": true }] },
+    { "keys": ["ctrl+shift+,"], "command": "unindent", "context": [{ "key": "preceding_text", "operator": "regex_match", "operand": "^[\t ]*" }] },
+    { "keys": ["ctrl+shift+,"], "command": "unindent", "context": [{ "key": "text", "operator": "regex_contains", "operand": "\n" }] },
+    { "keys": ["ctrl+shift+,"], "command": "move", "args": {"by": "lines", "forward": false}, "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true }] },
+    { "keys": ["ctrl+shift+,"], "command": "prev_field", "context": [{ "key": "has_prev_field", "operator": "equal", "operand": true }] },
+
     // php companion
     { "keys": ["alt+e"], "command": "expand_fqcn", "args": {"leading_separator": true} },
     { "keys": ["alt+i"], "command": "find_use" },
