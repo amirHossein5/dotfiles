@@ -1,6 +1,7 @@
 [[language]]
 name = "php"
 auto-format = true
+diagnostic-severity = "Error"
 
 [[language]]
 name = "html"
