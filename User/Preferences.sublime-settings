@@ -27,7 +27,7 @@
 	"vintage_ctrl_keys": true,
 	"index_exclude_gitignore": false,
 	"show_sidebar_button": false,
-	"phpunit.artisan": true,
+	"phpunit.pest": true,
 	"phpunit.strategy": "kitty",
 	"phpunit.options": {
 		"stop-on-error": true,
