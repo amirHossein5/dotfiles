@@ -3,18 +3,32 @@ alias clearVim='rm -rf ~/.config/nvim; rm -rf ~/.local/share/nvim'
 alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
 alias cat="batcat --color=never"
-alias sail='[ -f sail ] && sail || vendor/bin/sail'
 alias kt='kitty +kitten themes'
 
 # Laravel
+alias sail='[ -f sail ] && sail || vendor/bin/sail'
+
 alias a="php artisan"
+alias sa="sail artisan"
+
 alias at="php artisan test --stop-on-failure --stop-on-error"
+alias sat="sail artisan test --stop-on-failure --stop-on-error"
+
 ## database
 alias am="php artisan migrate"
+alias sam="sail artisan migrate"
+
 alias amf="php artisan migrate:fresh"
+alias samf="sail artisan migrate:fresh"
+
 alias amfs="php artisan migrate:fresh --seed"
+alias samfs="sail artisan migrate:fresh --seed"
+
 alias amr="php artisan migrate:rollback"
+alias samr="sail artisan migrate:rollback"
+
 alias ads="php artisan db:seed"
+alias sads="sail artisan db:seed"
 
 # Composer
 alias c="composer"
