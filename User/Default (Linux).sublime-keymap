@@ -26,6 +26,10 @@
     { "keys": ["ctrl+shift+,"], "command": "move", "args": {"by": "lines", "forward": false}, "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true }] },
     { "keys": ["ctrl+shift+,"], "command": "prev_field", "context": [{ "key": "has_prev_field", "operator": "equal", "operand": true }] },
 
+    { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+    { "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+    { "keys": ["ctrl+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+
     // php companion
     { "keys": ["alt+shift+i"], "command": "expand_fqcn", "args": {"leading_separator": true} },
     { "keys": ["alt+i"], "command": "find_use" },
