@@ -5,7 +5,7 @@
 # theme = 'darcula'
 # theme = 'solarized_light'
 # ayu_mirage dark_plus edge_default everforest_dark_hard grbx_mix_light_hard grbx_original_light_medium
-theme = "github_light_high_contrast"
+theme = "gruvbox_mix_light_hard"
 
 [editor]
 # line-number = 'relative'
