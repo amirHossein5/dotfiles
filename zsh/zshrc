@@ -78,4 +78,4 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.zsh_aliases
 
 # keyspeed
-xset r rate 250 50
+xset r rate 200 70

@@ -8,8 +8,8 @@ ln -s $DOTFILES/fontconfig $HOME/.config/fontconfig
 rm -rf $HOME/.config/kitty
 ln -s $DOTFILES/kitty $HOME/.config/kitty
 
-rm -rf $HOME/.config/lf
-ln -s $DOTFILES/lf $HOME/.config/lf
+# rm -rf $HOME/.config/lf
+# ln -s $DOTFILES/lf $HOME/.config/lf
 
 rm -rf $HOME/.config/sublime-text/Packages/User
 ln -s $DOTFILES/User $HOME/.config/sublime-text/Packages/User
@@ -20,13 +20,11 @@ ln -s $DOTFILES/helix $HOME/.config/helix
 rm -rf $HOME/.config/lazygit
 ln -s $DOTFILES/lazygit $HOME/.config/lazygit
 
-# rm -rf $HOME/.config/nvim
-# ln -s $DOTFILES/nvim $HOME/.config/nvim
-
 rm -rf $HOME/stubs
 ln -s $DOTFILES/stubs $HOME/stubs
 
-# ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+ln -sf $DOTFILES/xbindkey/xbindkeysrc $HOME/.xbindkeysrc
+
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 ln -sf $DOTFILES/zsh/zsh_aliases $HOME/.zsh_aliases
 

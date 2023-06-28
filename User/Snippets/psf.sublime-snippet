@@ -10,7 +10,7 @@ public static function ${1}(${2}): ${3}
     ${4}
 }
 ]]></content>
-<tabTrigger>psfunc</tabTrigger>
+<tabTrigger>psf</tabTrigger>
 <description>public static function</description>
 <scope>embedding.php, text.html.php, meta.embedded.php, source.php.embedded.html, meta.function.php, storage.modifier.access.php</scope>
 </snippet>

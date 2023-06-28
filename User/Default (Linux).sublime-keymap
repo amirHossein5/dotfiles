@@ -7,7 +7,7 @@
     { "keys": ["alt+shift+/"], "command": "toggle_comment", "args": { "block": true } },
     { "keys": ["alt+g"], "command": "goto_definition" },
     { "keys": ["alt+shift+s"], "command": "js_prettier" },
-    { "keys": ["alt+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": [" ", "p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
     { "keys": ["alt+s"], "command": "save" },
     { "keys": ["alt+w"], "command": "close" },
     { "keys": ["alt+q"], "command": "exit" },
@@ -29,6 +29,17 @@
     { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
     { "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
     { "keys": ["ctrl+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+
+    { "keys": ["ctrl+alt+l"], "command": "auto_complete_open_link", "context":
+        [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true },
+        ]
+    },
+    { "keys": ["ctrl+alt+h"], "command": "auto_complete_open_link", "context":
+        [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true },
+        ]
+    },
 
     // php companion
     { "keys": ["alt+shift+i"], "command": "expand_fqcn", "args": {"leading_separator": true} },
@@ -69,7 +80,12 @@
     { "keys": ["alt+e"], "command": "lsp_hover", "context": [{"key": "lsp.session_with_capability", "operand": "hoverProvider"}] },
     { "keys": ["alt+s"], "command": "lsp_save", "context": [{"key": "lsp.session_with_capability", "operand": "textDocumentSync.willSave | textDocumentSync.willSaveWaitUntil | codeActionProvider.codeActionKinds | documentFormattingProvider | documentRangeFormattingProvider"}] },
 
-    // { "keys": ["ctrl+alt+t"], "command": "terminus_open"},
+    // orgami
+    { "keys": [":", "b", "d"], "command": "destroy_pane", "args": {"direction": "self"} },
+    { "keys": ["ctrl+shift+l"], "command": "travel_to_pane", "args": {"direction": "right"} },
+    { "keys": ["ctrl+shift+h"], "command": "travel_to_pane", "args": {"direction": "left"} },
+    { "keys": ["ctrl+shift+j"], "command": "travel_to_pane", "args": {"direction": "down"} },
+    { "keys": ["ctrl+shift+k"], "command": "travel_to_pane", "args": {"direction": "up"} },
 ]
 
 

@@ -10,7 +10,7 @@ public function ${1}(${2}): ${3}
     ${4}
 }
 ]]></content>
-<tabTrigger>pfunc</tabTrigger>
+<tabTrigger>pf</tabTrigger>
 <description>public function</description>
 <scope>embedding.php, text.html.php, meta.embedded.php, source.php.embedded.html, meta.function.php, storage.modifier.access.php</scope>
 </snippet>
