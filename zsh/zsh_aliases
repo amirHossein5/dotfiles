@@ -2,7 +2,7 @@ alias lg='lazygit'
 alias clearVim='rm -rf ~/.config/nvim; rm -rf ~/.local/share/nvim'
 alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
-alias cat="batcat --color=never"
+alias cat="bat --color=never"
 alias kt='kitty +kitten themes'
 
 # Laravel
