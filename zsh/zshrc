@@ -55,6 +55,12 @@ open () {
     xdg-open $* > /dev/null 2>&1
 }
 
+cmk () {
+    [ -z $1 ] && echo "No dir name specified" && return 1;
+
+    mkdir $1 && cd $1;
+}
+
 ### Fix slowness of pastes with zsh-syntax-highlighting.zsh
 pasteinit() {
   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
