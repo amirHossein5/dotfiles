@@ -3,7 +3,7 @@
     "author": "Gerard Roche",
     "variables":
     {
-        "bg0": "#2E2E2E", // #272822
+        "bg0": "#272822", // #2E2E2E
 
         "fg0": "#f8f8f2",
         "fg1": "#cfcfc2",
