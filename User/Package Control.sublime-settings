@@ -6,18 +6,16 @@
 	"installed_packages":
 	[
 		"A File Icon",
-		"All Autocomplete",
 		"auto-save",
-		"ayu",
-		"Color Highlight",
 		"DocBlockr",
 		"FileManager",
-		"GitHub Theme",
+		"fold-use",
 		"Inspired GitHub Color Scheme",
 		"JsPrettier",
 		"Laravel Blade Highlighter",
 		"LSP",
 		"LSP-intelephense",
+		"LSP-pylsp",
 		"LSP-tailwindcss",
 		"Material Theme",
 		"Multicommand",
@@ -28,8 +26,6 @@
 		"polyfill",
 		"ScrollOffset",
 		"SnippetMaker",
-		"SublimeLinter",
-		"SublimeLinter-php",
 		"Surround",
 		"Theme - Afterglow",
 		"Vintage Surround",
@@ -37,5 +33,6 @@
 	// "http_proxy": "localhost:9050",
 	"repositories":
 	[
+		"https://github.com/amirHossein5/fold-use",
 	],
 }

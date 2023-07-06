@@ -7,7 +7,7 @@
     { "keys": ["alt+shift+/"], "command": "toggle_comment", "args": { "block": true } },
     { "keys": ["alt+g"], "command": "goto_definition" },
     { "keys": ["alt+shift+s"], "command": "js_prettier" },
-    { "keys": [" ", "p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": [" ", " "], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
     { "keys": ["alt+s"], "command": "save" },
     { "keys": ["alt+w"], "command": "close" },
     { "keys": ["alt+q"], "command": "exit" },
