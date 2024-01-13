@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-read NAME;
-echo -n "$(${NAME})";
-exit 0;
