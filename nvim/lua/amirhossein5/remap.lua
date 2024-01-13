@@ -3,9 +3,6 @@ vim.g.mapleader = ' '
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "<C-w>-", ":res +5<CR>")
-vim.keymap.set("n", "<C-w>+", ":res -5<CR>")
-
 vim.keymap.set({"n", "v"}, "<leader>cn", ":cnext<CR>")
 vim.keymap.set({"n", "v"}, "<leader>cp", ":cprev<CR>")
 vim.keymap.set({"n"}, "<leader>co", ":copen<CR>")
