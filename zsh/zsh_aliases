@@ -3,6 +3,7 @@ alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
 alias cat="batcat --color=never"
 alias vim="nvim"
+alias f="cd \$(find ~/projects ~/sites -type d \( -name node_modules -o -name .git -o -name vendor -o -name build \) -prune -o -name '*' -type d -print | fzf)"
 
 # Laravel
 alias sail='[ -f sail ] && sail || vendor/bin/sail'
