@@ -10,8 +10,6 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 rm -rf $HOME/stubs
 ln -s $DOTFILES/stubs $HOME/stubs
 
-ln -sf $DOTFILES/xbindkey/xbindkeysrc $HOME/.xbindkeysrc
-
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 ln -sf $DOTFILES/zsh/zsh_aliases $HOME/.zsh_aliases
 
