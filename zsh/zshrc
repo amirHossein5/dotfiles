@@ -49,15 +49,6 @@ export EDITOR=gnome-terminal
 
 unsetopt sharehistory
 
-open () {
-    xdg-open $* > /dev/null 2>&1
-}
-
-cmk() {
-    [ -z $1 ] && echo "No dir name specified" && return 1;
-
-    mkdir $1 && cd $1;
-}
 
 ### Fix slowness of pastes with zsh-syntax-highlighting.zsh
 pasteinit() {
@@ -79,6 +70,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Aliases
+source ~/.zsh_functions
 source ~/.zsh_aliases
 
 [ "$KITTY_HOLD" = "1" ] && exec kitten __hold_till_enter__

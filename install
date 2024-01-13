@@ -9,6 +9,7 @@ ln -s $DOTFILES/stubs $HOME/stubs
 
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 ln -sf $DOTFILES/zsh/zsh_aliases $HOME/.zsh_aliases
+ln -sf $DOTFILES/zsh/zsh_functions $HOME/.zsh_functions
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
