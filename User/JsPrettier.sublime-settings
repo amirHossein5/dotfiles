@@ -3,7 +3,7 @@
 {
     "auto_format_on_save": true,
     "node_path": "~/.nvm/versions/node/v18.16.1/bin/node",
-    "prettier_cli_path": "~/.nvm/versions/node/v18.16.1/bin/prettier",
+    "prettier_cli_path": "./node_modules/.bin/prettier",
     "auto_format_on_save_excludes": [
         "*/node_modules/*",
         "*/vendor/*",

@@ -1,9 +1,8 @@
-alias lg='lazygit'
 alias clearVim='rm -rf ~/.config/nvim; rm -rf ~/.local/share/nvim'
 alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
 alias cat="batcat --color=never"
-alias kt='kitty +kitten themes'
+alias vim="nvim"
 
 # Laravel
 alias sail='[ -f sail ] && sail || vendor/bin/sail'
@@ -14,12 +13,9 @@ alias sa="sail artisan"
 alias at="php artisan test --stop-on-failure --stop-on-error"
 alias sat="sail artisan test --stop-on-failure --stop-on-error"
 
-## database
+# database
 alias am="php artisan migrate"
 alias sam="sail artisan migrate"
-
-alias amf="php artisan migrate:fresh"
-alias samf="sail artisan migrate:fresh"
 
 alias amfs="php artisan migrate:fresh --seed"
 alias samfs="sail artisan migrate:fresh --seed"
@@ -27,39 +23,5 @@ alias samfs="sail artisan migrate:fresh --seed"
 alias amr="php artisan migrate:rollback"
 alias samr="sail artisan migrate:rollback"
 
-alias ads="php artisan db:seed"
-alias sads="sail artisan db:seed"
-
 # Composer
-alias c="composer"
-alias cduo="composer dump-autoload -o"
 alias cdu="composer dump-autoload"
-
-# Git
-alias g="git"
-alias ga="git add"
-alias gaa="git add --all"
-alias gb="git branch"
-alias gba="git branch --all"
-alias gbd="git branch --delete"
-alias gcm="git commit --message"
-alias gco="git checkout"
-alias gcb="git checkout -b"
-alias gcl="git clone"
-alias gd="git diff"
-alias gds="git diff --staged"
-alias gf="git fetch"
-alias gu="git pull"
-alias gur="git pull --rebase"
-alias gp="git push"
-alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
-alias gloga="git log --oneline --decorate --graph --all"
-alias gm="git merge"
-alias gr="git remote"
-alias gra="git remote add"
-alias grmv="git remote rename"
-alias grrm="git remote remove"
-alias grup="git remote update"
-alias grb="git rebase"
-alias gst="git status"
-alias gss="git status --short"

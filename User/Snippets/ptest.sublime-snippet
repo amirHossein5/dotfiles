@@ -6,7 +6,7 @@
 -->
 <content><![CDATA[
 /** @test */
-public function ${1}(): void
+function ${1}()
 {
     ${2}
 }

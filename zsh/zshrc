@@ -6,7 +6,6 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 VI_MODE_SET_CURSOR=true
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 plugins=(
     zsh-vi-mode    
@@ -34,6 +33,7 @@ path=(
     $HOME/go/bin
     $HOME/.cargo/bin
     ./vendor/bin
+    $HOME/dotfiles/scripts
     ${ANDROID_HOME}tools/
     ${ANDROID_HOME}platform-tools/
     $path
@@ -45,9 +45,7 @@ zstyle ':completion:*:descriptions' format %B%d%b
 zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
     'local-directories named-directories'
 
-export EDITOR=hx
-export ZVM_VI_EDITOR=hx 
-export GIT_EDITOR=hx
+export EDITOR=gnome-terminal
 
 unsetopt sharehistory
 
@@ -55,7 +53,7 @@ open () {
     xdg-open $* > /dev/null 2>&1
 }
 
-cmk () {
+cmk() {
     [ -z $1 ] && echo "No dir name specified" && return 1;
 
     mkdir $1 && cd $1;
@@ -83,5 +81,4 @@ export NVM_DIR="$HOME/.nvm"
 # Aliases
 source ~/.zsh_aliases
 
-# keyspeed
-xset r rate 200 70
+[ "$KITTY_HOLD" = "1" ] && exec kitten __hold_till_enter__

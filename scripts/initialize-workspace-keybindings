@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
+
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<alt>1']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<alt>2']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<alt>3']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<alt>4']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<alt>5']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<alt>6']"
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<alt><shift>1']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<alt><shift>2']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<alt><shift>3']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<alt><shift>4']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<alt><shift>5']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<alt><shift>6']"

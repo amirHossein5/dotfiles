@@ -71,8 +71,8 @@
 
         "rulers": "var(fg2)",
 
-        "active_guide": "color(var(yellow) alpha(0.25))",
-        "guide": "color(var(fg2) alpha(0.06))",
+        "active_guide": "color(var(yellow) alpha(0.30))",
+        "guide": "color(var(fg2) alpha(0.30))",
         "stack_guide": "color(var(fg0) alpha(0.06))",
 
         "bracket_contents_foreground": "var(yellow)",

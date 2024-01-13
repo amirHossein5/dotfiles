@@ -2,12 +2,16 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"A File Icon",
+		"LSP",
+		"LSP-tailwindcss",
 	],
 	"installed_packages":
 	[
 		"A File Icon",
 		"auto-save",
 		"DocBlockr",
+		"Emmet",
 		"FileManager",
 		"fold-use",
 		"Inspired GitHub Color Scheme",
@@ -17,14 +21,15 @@
 		"LSP-intelephense",
 		"LSP-pylsp",
 		"LSP-tailwindcss",
+		"LSP-typescript",
 		"Material Theme",
 		"Multicommand",
+		"Nord",
 		"Origami",
 		"Package Control",
 		"PHP Companion",
 		"PHPUnitKit",
 		"polyfill",
-		"ScrollOffset",
 		"SnippetMaker",
 		"Surround",
 		"Theme - Afterglow",
