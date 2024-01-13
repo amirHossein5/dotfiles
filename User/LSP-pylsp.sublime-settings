@@ -1,8 +1,0 @@
-// Settings in here override those in "LSP-pylsp/LSP-pylsp.sublime-settings"
-{
-    "settings":
-    {
-        "pylsp.plugins.pylsp_black.enabled": true,
-    },
-    "enabled": true,
-}
