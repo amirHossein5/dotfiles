@@ -97,5 +97,6 @@ return require('packer').startup(function(use)
         end
     }
 
+    use { 'folke/trouble.nvim' }
     use { 'folke/zen-mode.nvim' }
 end)
