@@ -6,10 +6,4 @@ set nu
 set rnu
 set incsearch
 set expandtab
-set smartindent
-
-call plug#begin()
-Plug 'nordtheme/vim'
-call plug#end()
-
-colorscheme nord
+set shiftwidth=4
