@@ -4,7 +4,9 @@ export EDITOR=gnome-terminal
 ZSH_THEME="robbyrussell"
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=()
+plugins=(
+    history-substring-search
+)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_functions
@@ -25,5 +27,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 bindkey -v
 
-bindkey '^P' history-beginning-search-backward
-bindkey '^N' history-beginning-search-forward
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
