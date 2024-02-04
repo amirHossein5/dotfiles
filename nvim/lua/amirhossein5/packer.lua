@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
 
     use {
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup { map_cr = true, map_complete = true } end
+        config = function() require("nvim-autopairs").setup {} end
     }
 
     use { 'airblade/vim-rooter' }
