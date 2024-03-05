@@ -6,6 +6,6 @@ let g:fzf_vim.preview_window = ['hidden,right,50%', 'ctrl-/']
 
 nnoremap <leader>pf :Files<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <C-t> :BTags<CR>
+nnoremap <leader>r :BTags<CR>
 nnoremap <C-p> :execute system('git rev-parse --is-inside-work-tree') =~ 'true' ? 'GF' : 'Files'<CR>
 nnoremap <leader>ps :Rg<CR>
