@@ -5,3 +5,4 @@ nnoremap <Leader>tl :w<CR> :tabonly<CR> :TestLast<CR>
 nnoremap <Leader>tw :w<CR> :TestVisit<CR>
 
 let g:test#basic#start_normal = 1
+let test#php#phpunit#executable = 'php artisan test'
