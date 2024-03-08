@@ -42,4 +42,5 @@ set updatetime=50
 
 set autowriteall
 
-colorscheme catppuccin-mocha
+" colorscheme catppuccin-mocha
+colorscheme kanagawa

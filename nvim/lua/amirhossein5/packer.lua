@@ -3,6 +3,7 @@ vim.cmd('source ~/.config/nvim/lua/amirhossein5/plugins/greplace.vim')
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    use 'rebelot/kanagawa.nvim'
     use { 'wbthomason/packer.nvim' }
 
     use "nvim-lua/plenary.nvim"
