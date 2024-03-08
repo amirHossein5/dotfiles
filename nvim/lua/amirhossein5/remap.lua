@@ -5,7 +5,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set({"n", "v"}, "<leader>cn", ":cnext<CR>")
 vim.keymap.set({"n", "v"}, "<leader>cp", ":cprev<CR>")
-vim.keymap.set({"n"}, "<leader>co", ":copen<CR>")
+vim.keymap.set({"n"}, "<leader>co", "<CR><C-w>o")
 vim.keymap.set({"n"}, "<leader>cc", ":cclose<CR>")
 
 vim.keymap.set("n", "J", "mzJ`z")
