@@ -4,8 +4,6 @@ set termguicolors
 
 set nowrap
 
-set listchars=nbsp:+,tab:\ \ ,trail:-,
-set list
 set autoread
 
 set nu
