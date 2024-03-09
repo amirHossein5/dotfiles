@@ -34,6 +34,14 @@ require('mason-lspconfig').setup({
             local lua_opts = lsp_zero.nvim_lua_ls()
             lspconfig.lua_ls.setup(lua_opts)
         end,
+        clangd = function()
+            lspconfig.clangd.setup({
+                cmd = {
+                    "clangd",
+                    "--fallback-style=webkit"
+                }
+            })
+        end,
         pylsp = function()
             lspconfig.pylsp.setup({
                 settings = {
@@ -84,12 +92,12 @@ require('lspconfig').emmet_ls.setup({
 vim.opt.pumheight = 4
 
 vim.diagnostic.config({
-    virtual_text = false,
-    underline = false,
-    signs = false,
+    virtual_text = true,
+    underline = true,
+    signs = true,
 })
 
-vim.api.nvim_create_user_command("DiagnosticToggle", function()
+vim.api.nvim_create_user_command("ToggleDiagnostic", function()
     local config = vim.diagnostic.config
     local vt = config().virtual_text
     config {
