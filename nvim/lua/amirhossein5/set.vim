@@ -39,6 +39,3 @@ set colorcolumn=80
 set updatetime=50
 
 set autowriteall
-
-" colorscheme catppuccin-mocha
-colorscheme kanagawa
