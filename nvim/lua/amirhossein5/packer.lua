@@ -4,6 +4,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     use 'rebelot/kanagawa.nvim'
+    use 'rose-pine/neovim'
     use { 'wbthomason/packer.nvim' }
 
     use "nvim-lua/plenary.nvim"
