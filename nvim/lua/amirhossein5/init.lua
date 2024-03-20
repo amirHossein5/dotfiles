@@ -8,3 +8,6 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
     pattern = "*",
     command = [[:exec 'norm m`' | %s/\s\+$//e | norm g``]]
 })
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
