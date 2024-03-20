@@ -3,10 +3,11 @@ vim.g.mapleader = ' '
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set({"n", "v"}, "<leader>cn", ":cnext<CR>")
-vim.keymap.set({"n", "v"}, "<leader>cp", ":cprev<CR>")
-vim.keymap.set({"n"}, "<leader>co", "<CR><C-w>o")
+vim.keymap.set({"n"}, "<leader>cn", ":cnext<CR>")
+vim.keymap.set({"n"}, "<leader>cp", ":cprev<CR>")
+vim.keymap.set({"n"}, "<leader>co", ":copen<CR>")
 vim.keymap.set({"n"}, "<leader>cc", ":cclose<CR>")
+vim.cmd("autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR><C-w>o")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -32,6 +33,4 @@ vim.keymap.set('n', "<leader>lv", ":e resources/views/<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+vim.keymap.set("n", "-", ":Ex<CR>")
