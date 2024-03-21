@@ -4,8 +4,9 @@ require('amirhossein5.set')
 require('amirhossein5.blade')
 
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
+    group = vim.api.nvim_create_augroup("Personal", {}),
     pattern = "*",
-    command = [[%s/\s\+$//e]]
+    command = [[:exec 'norm m`' | %s/\s\+$//e | norm g``]]
 })
 
 vim.g.netrw_browse_split = 0
