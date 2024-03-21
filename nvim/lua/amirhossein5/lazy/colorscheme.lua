@@ -24,7 +24,10 @@ return {
 
 		config = function()
 			require('rose-pine').setup({
-				disable_background = true
+				disable_background = true,
+                styles = {
+                    bold = false,
+                }
 			})
 
 			SetTheme('rose-pine')
