@@ -1,5 +1,7 @@
 return {
     'folke/trouble.nvim',
+    keys = { "<leader>tr" },
+    cmd = "Trouble",
 
     config = function ()
         require('trouble').setup({
@@ -17,6 +19,16 @@ return {
             use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
         })
 
-        vim.keymap.set("n", "<leader>tr", function() require("trouble").toggle("quickfix") end)
+        vim.keymap.set("n", "<leader>tr", function()
+            require("trouble").toggle()
+        end)
+
+        vim.keymap.set("n", "[t", function()
+            require("trouble").next({skip_groups = true, jump = true})
+        end)
+
+        vim.keymap.set("n", "]t", function()
+            require("trouble").previous({skip_groups = true, jump = true})
+        end)
     end
 }

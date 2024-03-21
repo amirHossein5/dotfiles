@@ -1,10 +1,12 @@
 return {
     {
         'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        event = { "BufReadPre", "BufNewFile", "InsertEnter" },
+        config = true
     },
 
-    'tpope/vim-eunuch',
+    {
+        'tpope/vim-eunuch',
+        event = { "BufReadPre", "BufNewFile", "InsertEnter" },
+    },
 }
