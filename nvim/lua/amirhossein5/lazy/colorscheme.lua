@@ -8,6 +8,7 @@ end
 return {
 	{
 		'folke/tokyonight.nvim',
+        lazy = true,
 
 		config = function()
 			require("tokyonight").setup({
@@ -24,10 +25,13 @@ return {
 
 		config = function()
 			require('rose-pine').setup({
-				disable_background = true
+				disable_background = true,
+                styles = {
+                    bold = false,
+                }
 			})
 
-			SetTheme('rose-pine')
+            SetTheme('rose-pine')
 
 			vim.cmd("hi diffAdd guifg=#67a95b guibg=NONE")
 			vim.cmd("hi diffDelete guifg=#FA5057 guibg=NONE")

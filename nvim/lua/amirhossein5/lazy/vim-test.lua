@@ -1,5 +1,7 @@
 return {
     'vim-test/vim-test',
+    event = { "BufReadPre", "BufNewFile", "InsertEnter" },
+
     config = function()
         vim.cmd([[
             nnoremap <Leader>tn :w<CR> :tabonly<CR> :silent TestNearest<CR>

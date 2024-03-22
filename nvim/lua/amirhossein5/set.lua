@@ -22,7 +22,8 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = yes
+
+vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn="80"
 
 vim.opt.updatetime = 50

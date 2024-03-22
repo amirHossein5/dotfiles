@@ -2,6 +2,8 @@ return {
 	'tpope/vim-fugitive',
 	dependencies = 'tpope/vim-rhubarb',
 	version = '*',
+    keys = { "<leader>gi" },
+    cmd = {"Git", "Gwrite"},
 
 	config = function()
 		vim.keymap.set("n", "<leader>gi", vim.cmd.Git)

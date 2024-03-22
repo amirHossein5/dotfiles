@@ -11,4 +11,28 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('amirhossein5.lazy')
+require('lazy').setup({
+    { import = 'amirhossein5.lazy' },
+    { import = 'amirhossein5.lazy.lsp' },
+}, {
+    change_detection = {
+        notify = false
+    },
+    ui = {
+        icons = {
+            cmd = "⌘",
+            config = "🛠",
+            event = "📅",
+            ft = "📂",
+            init = "⚙",
+            keys = "🗝",
+            plugin = "🔌",
+            runtime = "💻",
+            require = "🌙",
+            source = "📄",
+            start = "🚀",
+            task = "📌",
+            lazy = "💤 ",
+        },
+    },
+})
