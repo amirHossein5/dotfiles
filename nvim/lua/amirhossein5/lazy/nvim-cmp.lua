@@ -10,7 +10,6 @@ return {
         'dcampos/nvim-snippy',
         'dcampos/cmp-snippy',
     },
-    event = { "BufReadPre", "BufNewFile", "InsertEnter" },
     config = function()
         local cmp = require('cmp')
 
@@ -23,7 +22,6 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-y>'] = cmp.mapping(function()
                     if not cmp.visible() then cmp.complete() end
-
                     cmp.confirm({ select = true })
                 end),
                 ['<Tab>'] = cmp.mapping.confirm({ select = true }),
@@ -49,10 +47,10 @@ return {
 
         require('snippy').setup({
             mappings = {
-                ins = {
-                    ['<c-l>'] = 'next',
-                    ['<c-h>'] = 'previous',
-                }
+                nis = {
+                    ['<leader>;'] = 'next',
+                    ['<leader>,'] = 'previous',
+                },
             }
         })
 
