@@ -84,7 +84,7 @@ return {
 
         require("mason-tool-installer").setup({
             ensure_installed = {
-                "prettierd", "eslint_d",
+                "prettierd", "eslint",
             }
         })
     end
