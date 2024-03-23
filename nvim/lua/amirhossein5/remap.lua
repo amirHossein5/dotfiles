@@ -3,10 +3,10 @@ vim.g.mapleader = ' '
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set({"n"}, "<leader>cn", ":cnext<CR>")
-vim.keymap.set({"n"}, "<leader>cp", ":cprev<CR>")
-vim.keymap.set({"n"}, "<leader>co", ":copen<CR>")
-vim.keymap.set({"n"}, "<leader>cc", ":cclose<CR>")
+vim.keymap.set({ "n" }, "<leader>cn", ":cnext<CR>")
+vim.keymap.set({ "n" }, "<leader>cp", ":cprev<CR>")
+vim.keymap.set({ "n" }, "<leader>co", ":copen<CR>")
+vim.keymap.set({ "n" }, "<leader>cc", ":cclose<CR>")
 vim.cmd("autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR><C-w>o")
 
 vim.keymap.set("n", "J", "mzJ`z")
@@ -19,8 +19,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "<leader>p", [["_dp]])
 vim.keymap.set("x", "<leader>P", [["_dP]])
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-c>", ":nohls<CR>")

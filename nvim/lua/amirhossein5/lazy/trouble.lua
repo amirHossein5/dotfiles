@@ -3,11 +3,11 @@ return {
     keys = { "<leader>tr" },
     cmd = "Trouble",
 
-    config = function ()
+    config = function()
         require('trouble').setup({
             icons = false,
-            fold_open = "v", -- icon used for open folds
-            fold_closed = ">", -- icon used for closed folds
+            fold_open = "v",      -- icon used for open folds
+            fold_closed = ">",    -- icon used for closed folds
             indent_lines = false, -- add an indent guide below the fold icons
             signs = {
                 -- icons / text used for a diagnostic
@@ -24,11 +24,11 @@ return {
         end)
 
         vim.keymap.set("n", "[t", function()
-            require("trouble").next({skip_groups = true, jump = true})
+            require("trouble").next({ skip_groups = true, jump = true })
         end)
 
         vim.keymap.set("n", "]t", function()
-            require("trouble").previous({skip_groups = true, jump = true})
+            require("trouble").previous({ skip_groups = true, jump = true })
         end)
     end
 }

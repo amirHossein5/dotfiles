@@ -1,7 +1,7 @@
 return {
     "phpactor/phpactor",
     ft = "php",
-    version =  "*",
+    version = "*",
     build = "composer install --no-dev -o",
     config = function()
         vim.keymap.set("n", "<Leader>pm", ":PhpactorContextMenu<CR>")
