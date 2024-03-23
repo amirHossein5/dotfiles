@@ -49,13 +49,6 @@ function SetupLSPs(lspconfig, capabilities)
                 }
             }
         end,
-
-        ["emmet_ls"] = function()
-            lspconfig.emmet_ls.setup({
-                capabilities = capabilities,
-                filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "blade" },
-            })
-        end,
     }
 end
 
@@ -78,7 +71,7 @@ return {
                 'rust_analyzer',
                 'tsserver',
                 'vimls',
-                'emmet_ls',
+                'emmet_language_server',
                 'intelephense',
                 'tailwindcss',
                 'gopls',
