@@ -48,8 +48,8 @@ return {
         require('snippy').setup({
             mappings = {
                 nis = {
-                    ['<leader>;'] = 'next',
-                    ['<leader>,'] = 'previous',
+                    ['<c-;>'] = 'next',
+                    ['<c-,>'] = 'previous',
                 },
             }
         })
