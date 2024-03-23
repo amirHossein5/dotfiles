@@ -64,6 +64,7 @@ return {
     dependencies = {
         "williamboman/mason-lspconfig",
         "neovim/nvim-lspconfig",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
         local lspconfig = require('lspconfig')
@@ -86,6 +87,12 @@ return {
             },
             automatic_installation = true,
             handlers = SetupLSPs(lspconfig, capabilities),
+        })
+
+        require("mason-tool-installer").setup({
+            ensure_installed = {
+                "prettierd", "eslint_d",
+            }
         })
     end
 }
