@@ -5,7 +5,6 @@ return {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
-        'hrsh7th/cmp-cmdline',
 
         'dcampos/nvim-snippy',
         'dcampos/cmp-snippy',
@@ -36,13 +35,6 @@ return {
             }, {
                 { name = 'buffer' },
             })
-        })
-
-        cmp.setup.cmdline({ '/', '?' }, {
-            mapping = cmp.mapping.preset.cmdline(),
-            sources = {
-                { name = 'buffer' }
-            }
         })
 
         require('snippy').setup({
