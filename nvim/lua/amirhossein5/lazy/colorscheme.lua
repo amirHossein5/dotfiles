@@ -18,6 +18,9 @@ return {
                     keywords = { italic = false },
                 },
             })
+
+            vim.cmd("hi diffAdded guifg=#67a95b guibg=NONE")
+            vim.cmd("hi diffRemoved guifg=#FA5057 guibg=NONE")
         end
     },
     {
