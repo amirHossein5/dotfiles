@@ -1,18 +1,16 @@
-vim.diagnostic.config({
-    virtual_text = true,
-    underline = true,
-    signs = true,
-})
+function SetDiagnostics(enabled)
+    vim.diagnostic.config({
+        virtual_text = enabled,
+        underline = enabled,
+        signs = enabled,
+    })
+end
 
-vim.api.nvim_create_user_command("ToggleDiagnostic", function()
-    local config = vim.diagnostic.config
-    local vt = config().virtual_text
-    config {
-        virtual_text = not vt,
-        underline = not vt,
-        signs = not vt,
-    }
-end, { desc = "toggle diagnostic" })
+SetDiagnostics(false)
+
+vim.api.nvim_create_user_command("ToggleDiagnostics", function()
+    SetDiagnostics(not vim.diagnostic.config().virtual_text)
+end, {})
 
 return {
     "neovim/nvim-lspconfig",
