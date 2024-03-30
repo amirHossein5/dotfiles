@@ -32,5 +32,6 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set('n', "<leader>lv", ":e resources/views/<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]])
+vim.keymap.set("v", "<leader>s", [[y:%s/<C-r>"//gc<Left><Left><Left>]])
 
 vim.keymap.set("n", "-", ":Ex<CR>")
