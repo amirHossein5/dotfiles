@@ -31,6 +31,14 @@ function SetupLSPs(lspconfig, capabilities)
             })
         end,
 
+        ["tsserver"] = function()
+            lspconfig.tsserver.setup {
+                on_attach = function(client)
+                    client.server_capabilities.semanticTokensProvider = nil
+                end,
+            }
+        end,
+
         ["lua_ls"] = function()
             lspconfig.lua_ls.setup {
                 capabilities = capabilities,
