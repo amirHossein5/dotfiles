@@ -23,7 +23,6 @@ return {
                     if not cmp.visible() then cmp.complete() end
                     cmp.confirm({ select = true })
                 end),
-                ['<Tab>'] = cmp.mapping.confirm({ select = true }),
                 ['<c-j>'] = cmp.mapping.scroll_docs(4),
                 ['<c-k>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-Space>'] = cmp.mapping.complete(),
