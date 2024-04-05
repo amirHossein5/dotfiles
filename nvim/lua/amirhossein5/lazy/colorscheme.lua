@@ -13,10 +13,6 @@ return {
         config = function()
             require("tokyonight").setup({
                 transparent = true,
-                styles = {
-                    comments = { italic = false },
-                    keywords = { italic = false },
-                },
             })
 
             vim.cmd("hi diffAdded guifg=#67a95b guibg=NONE")
@@ -29,9 +25,6 @@ return {
         config = function()
             require('rose-pine').setup({
                 disable_background = true,
-                styles = {
-                    bold = false,
-                }
             })
 
             SetTheme('rose-pine')
