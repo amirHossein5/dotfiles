@@ -41,6 +41,22 @@ return {
         end
     },
     {
+        'LunarVim/darkplus.nvim',
+        config = function()
+            vim.cmd("hi signColumn guibg=transparent")
+            vim.cmd("hi MsgArea guibg=transparent")
+            vim.cmd("hi ModeMsg guibg=transparent")
+            vim.cmd("hi Visual guibg=#0f354f")
+            vim.cmd("hi MatchParen guibg=#1f2e3f")
+
+            vim.cmd("hi TelescopeSelection guibg=#0f354f")
+            vim.cmd("hi TelescopeSelectionCaret guibg=#0f354f guifg=gray")
+
+            vim.cmd("hi diffAdded guifg=#67a95b guibg=NONE")
+            vim.cmd("hi diffRemoved guifg=#FA5057 guibg=NONE")
+        end
+    },
+    {
         'catppuccin/nvim',
         as = "catppuccin",
         config = function()
