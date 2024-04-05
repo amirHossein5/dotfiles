@@ -13,6 +13,7 @@ return {
         config = function()
             require("tokyonight").setup({
                 transparent = true,
+                style = "night",
             })
 
             vim.cmd("hi diffAdded guifg=#67a95b guibg=NONE")
