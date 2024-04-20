@@ -28,8 +28,6 @@ return {
                 disable_background = true,
             })
 
-            SetTheme('rose-pine')
-
             vim.cmd("hi diffAdd guifg=#67a95b guibg=NONE")
             vim.cmd("hi diffDelete guifg=#FA5057 guibg=NONE")
         end
@@ -37,6 +35,8 @@ return {
     {
         'LunarVim/darkplus.nvim',
         config = function()
+            SetTheme('darkplus')
+
             vim.cmd("hi signColumn guibg=transparent")
             vim.cmd("hi MsgArea guibg=transparent")
             vim.cmd("hi ModeMsg guibg=transparent")
