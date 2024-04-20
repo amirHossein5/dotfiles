@@ -15,6 +15,12 @@ return {
                 yaml = { "prettierd" },
                 markdown = { "prettierd" },
                 graphql = { "prettierd" },
+                html = { "blade-formatter" }
+            },
+            formatters = {
+                ['blade-formatter'] = {
+                    args = { "--stdin", "--wrap-attributes=force-expand-multiline" },
+                },
             },
         })
 
