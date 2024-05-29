@@ -6,7 +6,7 @@ function SetDiagnostics(enabled)
     })
 end
 
-SetDiagnostics(false)
+SetDiagnostics(true)
 
 vim.api.nvim_create_user_command("ToggleDiagnostics", function()
     SetDiagnostics(not vim.diagnostic.config().virtual_text)
