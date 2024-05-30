@@ -83,7 +83,6 @@ return {
                 'intelephense',
                 'tailwindcss',
                 'gopls',
-                'clangd',
                 'pylsp',
             },
             automatic_installation = true,
