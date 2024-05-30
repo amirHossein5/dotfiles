@@ -91,7 +91,7 @@ return {
 
         require("mason-tool-installer").setup({
             ensure_installed = {
-                "prettierd", "oxlint", "blade-formatter",
+                "prettierd", "oxlint", "blade-formatter", "clang-format"
             }
         })
     end
