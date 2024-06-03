@@ -16,14 +16,10 @@ return {
                 markdown = { "prettierd" },
                 graphql = { "prettierd" },
                 html = { "blade-formatter" },
-                cpp = { "clang-format" },
             },
             formatters = {
                 ['blade-formatter'] = {
                     args = { "--stdin", "--wrap-attributes=force-expand-multiline" },
-                },
-                ['clang-format'] = {
-                    args = { "--fallback-style=webkit" }
                 },
             },
         })

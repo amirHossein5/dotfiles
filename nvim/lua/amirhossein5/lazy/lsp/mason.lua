@@ -84,6 +84,7 @@ return {
                 'tailwindcss',
                 'gopls',
                 'pylsp',
+                'clangd',
             },
             automatic_installation = true,
             handlers = SetupLSPs(lspconfig, capabilities),
@@ -91,7 +92,7 @@ return {
 
         require("mason-tool-installer").setup({
             ensure_installed = {
-                "prettierd", "oxlint", "blade-formatter", "clang-format"
+                "prettierd", "oxlint", "blade-formatter"
             }
         })
     end
