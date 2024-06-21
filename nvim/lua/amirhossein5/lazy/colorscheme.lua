@@ -53,13 +53,4 @@ return {
             vim.cmd("hi diffRemoved guifg=#FA5057 guibg=NONE")
         end
     },
-    {
-        'catppuccin/nvim',
-        name = "catppuccin",
-        config = function()
-            vim.cmd("hi diffAdded guifg=#67a95b guibg=NONE")
-            vim.cmd("hi diffRemoved guifg=#FA5057 guibg=NONE")
-            vim.cmd("hi ColorColumn guibg=#181825")
-        end
-    },
 }
