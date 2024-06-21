@@ -36,9 +36,17 @@ return {
         end
     },
     {
+        "morhetz/gruvbox",
+        priority=1, -- loads colors better
+        config = function()
+            vim.cmd.colorscheme("gruvbox")
+            vim.o.background = "light"
+        end
+    },
+    {
         'LunarVim/darkplus.nvim',
         config = function()
-            SetTheme('darkplus')
+            -- SetTheme('darkplus')
 
             vim.cmd("hi signColumn guibg=transparent")
             vim.cmd("hi MsgArea guibg=transparent")
