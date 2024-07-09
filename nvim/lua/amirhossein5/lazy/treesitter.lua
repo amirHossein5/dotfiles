@@ -4,9 +4,7 @@ return {
 
     config = function()
         require('nvim-treesitter.configs').setup {
-            ensure_installed = { "html", "javascript", "jsdoc", "typescript", "c", "lua", "vim", "vimdoc", "rust", "php", "phpdoc", "bash" },
-
-            auto_install = true,
+            ensure_installed = { "javascript", "jsdoc", "typescript", "c", "lua", "vim", "vimdoc", "rust", "php", "phpdoc", "bash" },
 
             indent = {
                 enable = true,
