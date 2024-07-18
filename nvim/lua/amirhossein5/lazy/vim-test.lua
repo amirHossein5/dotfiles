@@ -11,6 +11,7 @@ return {
             nnoremap <Leader>tw :w<CR> :TestVisit<CR>
 
             let g:test#basic#start_normal = 1
+            let test#php#phpunit#executable = 'phpunit'
         ]])
     end
 }
