@@ -20,3 +20,5 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+
+cp $DOTFILES/.tmux-cht-items $HOME/.tmux-cht-items
