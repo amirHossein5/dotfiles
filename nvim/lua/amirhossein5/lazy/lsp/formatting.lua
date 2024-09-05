@@ -16,6 +16,7 @@ return {
                 markdown = { "prettierd" },
                 graphql = { "prettierd" },
                 html = { "blade-formatter" },
+                go = {'goimports'},
             },
             formatters = {
                 ['blade-formatter'] = {
