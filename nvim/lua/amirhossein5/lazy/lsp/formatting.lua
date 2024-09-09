@@ -20,7 +20,7 @@ return {
             },
             formatters = {
                 ['blade-formatter'] = {
-                    args = { "--stdin", "--wrap-attributes=force-expand-multiline" },
+                    args = { "--stdin", "--wrap-attributes=aligned-multiple" },
                 },
             },
         })
