@@ -6,6 +6,8 @@ return {
         require('nvim-treesitter.configs').setup {
             ensure_installed = { "javascript", "jsdoc", "typescript", "c", "lua", "vim", "vimdoc", "rust", "php", "phpdoc", "bash" },
 
+            auto_install = true,
+
             indent = {
                 enable = true,
             },
@@ -15,7 +17,9 @@ return {
                 enable = true,
 
                 disable = function(lang, buf)
-                    if lang == 'html' then
+                    local disableLangs = { html = true }
+
+                    if disableLangs[lang] then
                         return true
                     end
 
