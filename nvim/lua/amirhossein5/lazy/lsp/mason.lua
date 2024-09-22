@@ -31,8 +31,8 @@ function SetupLSPs(lspconfig, capabilities)
             })
         end,
 
-        ["tsserver"] = function()
-            lspconfig.tsserver.setup {
+        ["ts_ls"] = function()
+            lspconfig.ts_ls.setup {
                 on_attach = function(client)
                     client.server_capabilities.semanticTokensProvider = nil
                 end,
@@ -77,7 +77,7 @@ return {
                 'lua_ls',
                 'cssls',
                 'rust_analyzer',
-                'tsserver',
+                'ts_ls',
                 'vimls',
                 'emmet_language_server',
                 'intelephense',
