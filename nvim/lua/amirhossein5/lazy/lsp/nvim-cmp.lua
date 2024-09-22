@@ -45,6 +45,6 @@ return {
             }
         })
 
-        vim.opt.pumheight = 4
+        vim.opt.pumheight = 5
     end
 }
