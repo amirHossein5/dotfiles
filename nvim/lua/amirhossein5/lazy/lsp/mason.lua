@@ -76,7 +76,6 @@ return {
             ensure_installed = {
                 'lua_ls',
                 'cssls',
-                'rust_analyzer',
                 'ts_ls',
                 'vimls',
                 'emmet_language_server',
