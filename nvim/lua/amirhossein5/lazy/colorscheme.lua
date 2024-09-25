@@ -57,8 +57,8 @@ return {
             vim.cmd("hi TelescopeSelection guibg=#0f354f")
             vim.cmd("hi TelescopeSelectionCaret guibg=#0f354f guifg=gray")
 
-            vim.cmd("hi diffAdded guifg=#67a95b guibg=NONE")
-            vim.cmd("hi diffRemoved guifg=#FA5057 guibg=NONE")
+            vim.cmd("hi DiffAdded guifg=#67a95b guibg=NONE")
+            vim.cmd("hi DiffRemoved guifg=#FA5057 guibg=NONE")
         end
     },
 }
