@@ -22,26 +22,23 @@ return {
     },
     {
         'rose-pine/neovim',
-
+        priority = 1,
         config = function()
             require('rose-pine').setup({
                 variant = 'moon',
-                disable_background = true,
                 styles = {
                     italic = false,
                 },
+                highlight_groups = {
+                    ["DiffAdd"] = { fg = '#67a95b', bg = 'NONE' },
+                    ["DiffDelete"] = { fg = '#FA5057', bg = 'NONE' },
+                }
             })
-
-            vim.cmd("hi diffAdd guifg=#67a95b guibg=NONE")
-            vim.cmd("hi diffDelete guifg=#FA5057 guibg=NONE")
         end
     },
     {
         "morhetz/gruvbox",
-        priority=1, -- loads colors better
-        config = function()
-            vim.cmd.colorscheme("gruvbox")
-        end
+        priority = 1,
     },
     {
         'LunarVim/darkplus.nvim',
