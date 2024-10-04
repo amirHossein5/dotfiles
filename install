@@ -4,6 +4,8 @@ DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 ln -s $DOTFILES/nvim $HOME/.config/nvim
 
+ln -s $DOTFILES/foot $HOME/.config/foot
+
 ln -sf $DOTFILES/vimrc $HOME/.vimrc
 
 ln -s $DOTFILES/tmux.conf $HOME/.tmux.conf
