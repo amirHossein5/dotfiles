@@ -10,6 +10,7 @@ return {
 
             indent = {
                 enable = true,
+                disable = { 'html' },
             },
 
             highlight = {
