@@ -209,6 +209,6 @@ bindsym $mod+ctrl+space exec "swaymsg input '1:1:AT_Translated_Set_2_keyboard' x
 set $volume_changed_sound "paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 bindsym Ctrl+Up exec "pactl set-sink-volume @DEFAULT_SINK@ +5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 bindsym Ctrl+Down exec "pactl set-sink-volume @DEFAULT_SINK@ -5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
-bindsym Ctrl+Return exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+bindsym Ctrl+Shift+Down exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 
 include /etc/sway/config.d/*
