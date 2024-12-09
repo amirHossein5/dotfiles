@@ -207,7 +207,7 @@ bar {
 
 input * {
     xkb_layout us,ir
-    xkb_switch_layout next
+    xkb_switch_layout us
     xkb_numlock enabled
 }
 
