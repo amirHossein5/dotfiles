@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+fi
+
+if [[ -z $selected ]]; then
+    echo "pass a file path"
+    exit 1
+fi
+
+if [[ ! -f $selected ]]; then
+    echo "file not found"
+    exit 1
+fi
+
+dest=$selected
+from=$(dirname $dest)/$(date '+%s-unecrypted-')$(basename $selected)
+
+mv ${selected} ${from}
+
+openssl aes-256-cbc -a -pbkdf2 -salt -in ${from} -out ${dest} && rm ${from}
