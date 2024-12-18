@@ -23,6 +23,9 @@ return {
                     i = {
                         ['<C-u>'] = false,
                     }
+                },
+                preview = {
+                    timeout = 2,
                 }
             },
             extensions = {
