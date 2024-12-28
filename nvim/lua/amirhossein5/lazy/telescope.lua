@@ -64,15 +64,5 @@ return {
             '<leader>pg',
             ":lua require('telescope').extensions.live_grep_args.live_grep_args({ vimgrep_arguments = { 'rg', '--hidden', '--ignore', '-g=!.git/**', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case' } }) <CR>"
         )
-
-        require('telescope').load_extension('fzf')
-
-        local builtin = require('telescope.builtin')
-
-        local t = ':Telescope find_files find_command=rg,--hidden,--files'
-        vim.keymap.set('n', '<c-p>', t .. ',--ignore,-g=!.git<CR>')
-        vim.keymap.set('n', '<leader>pf', t .. ',--no-ignore<CR>')
-        vim.keymap.set('n', '<leader>b', builtin.buffers)
-        vim.keymap.set('n', '<leader>vh', builtin.help_tags)
     end
 }

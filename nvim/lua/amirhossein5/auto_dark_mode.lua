@@ -4,10 +4,8 @@ local job = require('plenary.job'):new({
 })
 
 if job:sync()[1] == "'prefer-dark'" then
-  SetTheme('gruvbox')
-  vim.opt.background = 'dark'
+  SetTheme('gruvbox', 'dark')
 elseif job:sync()[1] == "'prefer-light'" then
-  SetTheme('gruvbox')
-  vim.opt.background = 'light'
+  SetTheme('gruvbox', 'light')
 end
 

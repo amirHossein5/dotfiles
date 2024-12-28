@@ -1,0 +1,41 @@
+return {
+    dependencies = { 'junegunn/fzf', run = "fzf#install()" },
+    "junegunn/fzf.vim",
+    config = function()
+        vim.cmd([[
+            let g:fzf_vim = {}
+
+            let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
+            let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.87, 'yoffset': 0.3 } }
+            let $FZF_DEFAULT_OPTS = '--bind ctrl-k:preview-up,ctrl-j:preview-down --bind alt-a:select-all,alt-d:deselect-all'
+            let g:fzf_colors =
+            \ { 'fg':    ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'gutter':  ['bg', 'Normal'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
+
+            function! s:build_quickfix_list(lines)
+                call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+                copen
+                cc
+            endfunction
+
+            let g:fzf_action = {
+            \ 'ctrl-q': function('s:build_quickfix_list'), }
+        ]])
+
+        vim.keymap.set('n', '<leader>pf', ':Files<CR>')
+        vim.keymap.set('n', '<leader>b', ':Buffers<CR>')
+        vim.keymap.set('n', '<c-p>', ':GFiles --cached --others --exclude-standard<CR>')
+    end
+}

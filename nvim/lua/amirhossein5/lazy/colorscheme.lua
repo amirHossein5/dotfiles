@@ -1,10 +1,20 @@
-function SetTheme(theme)
+function SetTheme(theme, background)
+    background = background or 'dark';
+
     vim.cmd.colorscheme(theme)
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
-    vim.cmd("highlight ColorColumn guibg=#0d0c0c")
+    -- vim.cmd("highlight ColorColumn guibg=#0d0c0c")
+
+    if background == "light" then
+        vim.cmd("let $BAT_THEME='gruvbox-light'");
+    else
+        vim.cmd("let $BAT_THEME='gruvbox-dark'");
+    end
+
+    vim.opt.background = background;
 end
 
 return {
