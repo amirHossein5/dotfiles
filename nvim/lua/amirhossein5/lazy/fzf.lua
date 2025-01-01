@@ -32,10 +32,16 @@ return {
 
             let g:fzf_action = {
             \ 'ctrl-q': function('s:build_quickfix_list'), }
+
+            command! -bang -nargs=* PFiles
+            \ call fzf#vim#files(<q-args>, {
+            \   'source': 'rg --hidden --files --ignore -g="!.git"',
+            \ }, <bang>0)
+
         ]])
 
         vim.keymap.set('n', '<leader>pf', ':Files<CR>')
         vim.keymap.set('n', '<leader>b', ':Buffers<CR>')
-        vim.keymap.set('n', '<c-p>', ':GFiles --cached --others --exclude-standard<CR>')
+        vim.keymap.set('n', '<c-p>', ':PFiles<CR>')
     end
 }
