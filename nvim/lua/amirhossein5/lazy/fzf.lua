@@ -5,7 +5,7 @@ return {
         vim.cmd([[
             let g:fzf_vim = {}
 
-            let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
+            let g:fzf_vim.preview_window = ['hidden', 'ctrl-/']
             let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.87, 'yoffset': 0.3 } }
             let $FZF_DEFAULT_OPTS = '--bind ctrl-k:preview-up,ctrl-j:preview-down --bind alt-a:select-all,alt-d:deselect-all'
             let g:fzf_colors =
