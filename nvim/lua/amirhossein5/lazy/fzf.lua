@@ -34,9 +34,9 @@ return {
             \ 'alt-q': function('s:build_quickfix_list'), }
 
             command! -bang -nargs=* PFiles
-            \ call fzf#vim#files(<q-args>, {
+            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({
             \   'source': 'rg --hidden --files --ignore -g="!.git"',
-            \ }, <bang>0)
+            \ }), <bang>0)
 
         ]])
 
