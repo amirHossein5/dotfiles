@@ -31,7 +31,7 @@ return {
             endfunction
 
             let g:fzf_action = {
-            \ 'ctrl-q': function('s:build_quickfix_list'), }
+            \ 'alt-q': function('s:build_quickfix_list'), }
 
             command! -bang -nargs=* PFiles
             \ call fzf#vim#files(<q-args>, {
