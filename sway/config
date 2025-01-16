@@ -93,6 +93,10 @@ input "type:touchpad" {
     bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     bindsym $super+Escape exec swaylock
+
+    bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+    bindsym XF86MonBrightnessdown exec brightnessctl set 5%-
+
 #
 # Moving around:
 #
@@ -222,10 +226,13 @@ input * {
 
 bindsym --to-code --locked $super+space exec "swaymsg input '1:1:AT_Translated_Set_2_keyboard' xkb_switch_layout next"
 
-set $volume_changed_sound "paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 bindsym --to-code Ctrl+Up exec "pactl set-sink-volume @DEFAULT_SINK@ +5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 bindsym --to-code Ctrl+Down exec "pactl set-sink-volume @DEFAULT_SINK@ -5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 bindsym --to-code Ctrl+Shift+Down exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 
 bindsym --to-code {
     Print       exec grimshot --notify save output
