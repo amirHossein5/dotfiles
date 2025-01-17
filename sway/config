@@ -106,11 +106,6 @@ input "type:touchpad" {
     bindsym --to-code $mod+$up focus up
     bindsym --to-code $mod+$right focus right
 
-    bindsym --to-code $mod+Left focus left
-    bindsym --to-code $mod+Down focus down
-    bindsym --to-code $mod+Up focus up
-    bindsym --to-code $mod+Right focus right
-
     # Move t--to-code he focused window with the same, but add Shift
     bindsym --to-code $mod+Shift+$left move left
     bindsym --to-code $mod+Shift+$down move down
