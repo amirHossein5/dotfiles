@@ -6,6 +6,8 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 
 ln -s $DOTFILES/sway $HOME/.config/sway
 
+ln -s $DOTFILES/i3blocks $HOME/.config/i3blocks
+
 ln -s $DOTFILES/foot $HOME/.config/foot
 
 ln -sf $DOTFILES/vimrc $HOME/.vimrc
