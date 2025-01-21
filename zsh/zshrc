@@ -28,3 +28,8 @@ bindkey -v
 
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
