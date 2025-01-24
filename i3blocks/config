@@ -2,8 +2,12 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[bandwidth]
+command=~/dotfiles/i3blocks/bandwidth -i ' ' -o ' '
+interval=5
+
 [brightness]
-command=echo "BRI" $(echo $(cat /sys/class/backlight/intel_backlight/actual_brightness)"*100/"$(cat /sys/class/backlight/intel_backlight/max_brightness) | bc)"%"
+command=~/dotfiles/i3blocks/brightness
 interval=once
 signal=9
 
