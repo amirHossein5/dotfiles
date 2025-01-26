@@ -33,3 +33,6 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
+
+[ -z "$XDG_CURRENT_DESKTOP" ] && export XDG_CURRENT_DESKTOP=sway
+[ -z "$WAYLAND_DISPLAY" ] && export WAYLAND_DISPLAY=wayland-0
