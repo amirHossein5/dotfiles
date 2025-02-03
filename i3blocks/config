@@ -17,9 +17,9 @@ instance=Master
 interval=once
 signal=10
 
-[battery2]
-markup=pango
-interval=20
+[battery]
+command=~/dotfiles/i3blocks/battery
+interval=10
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S %p'
