@@ -1,10 +1,13 @@
-function SetTheme(theme, background)
+function SetTheme(theme, background, no_bg)
     background = background or 'dark';
+    no_bg = no_bg or false;
 
     vim.cmd.colorscheme(theme)
 
-    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    if no_bg then
+        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    end
 
     -- vim.cmd("highlight ColorColumn guibg=#0d0c0c")
 
