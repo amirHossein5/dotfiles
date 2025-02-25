@@ -34,5 +34,9 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     export SSH_AUTH_SOCK
 fi
 
-[ -z "$XDG_CURRENT_DESKTOP" ] && export XDG_CURRENT_DESKTOP=sway
-[ -z "$WAYLAND_DISPLAY" ] && export WAYLAND_DISPLAY=wayland-0
+if [ -z "$XDG_CURRENT_DESKTOP" ]; then
+    export XDG_CURRENT_DESKTOP=sway
+fi
+if [ -z "$WAYLAND_DISPLAY" ]; then
+    export WAYLAND_DISPLAY=wayland-0
+fi
