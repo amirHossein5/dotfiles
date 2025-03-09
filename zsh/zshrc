@@ -37,6 +37,9 @@ fi
 if [ -z "$XDG_CURRENT_DESKTOP" ]; then
     export XDG_CURRENT_DESKTOP=sway
 fi
+if [ -z "$XDG_CONFIG_HOME" ]; then
+    export XDG_CONFIG_HOME=$HOME/.config
+fi
 if [ -z "$WAYLAND_DISPLAY" ]; then
     export WAYLAND_DISPLAY=wayland-0
 fi
