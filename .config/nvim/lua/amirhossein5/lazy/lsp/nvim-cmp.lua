@@ -31,7 +31,6 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'snippy' },
                 { name = 'path' },
-                { name = "supermaven" },
             }, {
                 { name = 'buffer' },
             })
