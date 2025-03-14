@@ -3,7 +3,7 @@
 git clone https://github.com/neovim/neovim.git $HOME/neovim
 cd $HOME/neovim
 git fetch
-git checkout 0.10.1
+git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
 
 sudo apt install cmake gettext lua5.1 liblua5.1-0-dev
 make CMAKE_BUILD_TYPE=RelWithDebInfo
