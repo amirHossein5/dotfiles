@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+script_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+cd $script_dir
+dry="0"
+
+while [[ $# > 0 ]]; do
+    if [[ $1 == "--dry" ]]; then
+        dry="1"
+    fi
+    shift
+done
+
+log() {
+    if [[ $dry == "1" ]]; then
+        echo "[DRY_RUN]: $@"
+    else
+        echo "$@"
+    fi
+}
+
+execute() {
+    log "execute: $@"
+    if [[ $dry == "1" ]]; then
+        return
+    fi
+    "$@"
+}
+
+log "----------- env -----------"
+
+copy_dir() {
+    pushd $1 > /dev/null
+
+    for dir in $(find . -mindepth 1 -maxdepth 1 -type d); do
+        execute rm -rf $2/$dir
+        execute cp -r $dir $2/$dir
+    done
+
+    popd > /dev/null
+}
+
+copy_file() {
+    name=$(basename $1)
+
+    execute rm $2/$name
+    execute cp $1 $2/$name
+}
+
+copy_dir ./.config $XDG_CONFIG_HOME
+copy_dir ./.local $HOME/.local
+
+copy_file .zshrc $HOME

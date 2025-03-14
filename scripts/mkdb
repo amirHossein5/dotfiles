@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-[ -z $1 ] && echo "No database name specified" && exit 1;
-
-mysql -uroot -p <<-EOF
-create database $1;
-EOF

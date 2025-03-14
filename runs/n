@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n | sudo bash -s install lts
+sudo npm install -g n
