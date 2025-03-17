@@ -20,8 +20,7 @@ bindkey '^N' history-substring-search-down
 export XDG_CURRENT_DESKTOP=sway
 export XDG_CONFIG_HOME=$HOME/.config
 
-export PATH=$HOME/.local/bin:$HOME/.local/scripts:$PATH
-export PATH=$HOME/.config/composer/vendor/bin:./vendor/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/scripts:$HOME/.config/composer/vendor/bin:./vendor/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
     eval $(gnome-keyring-daemon --start)
