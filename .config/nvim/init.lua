@@ -525,6 +525,9 @@ require('lazy').setup({ {
 
                 ["clangd"] = function()
                     lspconfig.clangd.setup({
+                        on_attach = function(client)
+                            client.server_capabilities.semanticTokensProvider = nil
+                        end,
                         capabilities = capabilities,
                         cmd = {
                             "clangd",
