@@ -125,7 +125,6 @@ require('lazy').setup({ {
 }, {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    event = { "BufReadPost", "BufNewFile", "InsertEnter" },
 
     config = function()
         require('nvim-treesitter.configs').setup {
@@ -239,15 +238,12 @@ require('lazy').setup({ {
     end,
 }, {
     'tpope/vim-eunuch',
-    event = { "BufReadPost", "BufNewFile", "InsertEnter" },
 }, {
     'tpope/vim-sleuth',
-    event = { "BufReadPost", "BufNewFile", "InsertEnter" },
 }, {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { 'nvim-lua/plenary.nvim' },
-    event = { "BufReadPost", "BufNewFile", "InsertEnter" },
     keys = {
         "<leader>a", "<leader>w",
         "<c-h>", "<c-t>", "<c-n>", "<c-m>", "<c-,>", "<c-.>",
@@ -443,7 +439,6 @@ require('lazy').setup({ {
     end
 }, {
     "stevearc/conform.nvim",
-    event = { "BufReadPost", "BufNewFile", "InsertEnter" },
     config = function()
         local conform = require('conform')
 
