@@ -653,6 +653,7 @@ function SetTheme(theme, background, no_bg)
     if no_bg then
         vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        vim.cmd([[hi SignColumn guibg=transparent]])
     end
 
     -- vim.cmd("highlight ColorColumn guibg=#0d0c0c")
