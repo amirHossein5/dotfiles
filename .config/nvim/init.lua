@@ -654,6 +654,10 @@ function SetTheme(theme, background, no_bg)
         vim.cmd([[hi SignColumn guibg=transparent]])
     end
 
+    if theme == 'gruvbox' then
+        vim.cmd([[highlight Normal guibg=#1c1c1c]])
+    end
+
     -- vim.cmd("highlight ColorColumn guibg=#0d0c0c")
 
     if background == "light" then
