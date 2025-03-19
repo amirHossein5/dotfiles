@@ -409,10 +409,7 @@ require('lazy').setup({ {
         end
     },
 }, {
-    'NvChad/nvim-colorizer.lua',
-    event = { "BufReadPost", "BufNewFile", "InsertEnter" },
-
-    config = true
+    "lilydjwg/colorizer",
 }, {
     "laytan/cloak.nvim",
     event = { "BufReadPost", "BufNewFile" },
