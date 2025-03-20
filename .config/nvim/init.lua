@@ -409,7 +409,10 @@ require('lazy').setup({ {
         end
     },
 }, {
-    "lilydjwg/colorizer",
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+        require 'colorizer'.setup()
+    end
 }, {
     "laytan/cloak.nvim",
     event = { "BufReadPost", "BufNewFile" },
