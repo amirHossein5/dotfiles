@@ -642,7 +642,7 @@ require('lazy').setup({ {
     ui = { icons = { cmd = "⌘", config = "🛠", event = "📅", ft = "📂", init = "⚙", keys = "🗝", plugin = "🔌", runtime = "💻", require = "🌙", source = "📄", start = "🚀", task = "📌", lazy = "💤 ", }, },
 })
 
-function st(theme, background, no_bg)
+function St(theme, background, no_bg)
     background = background or 'dark';
     no_bg = no_bg or false;
 
@@ -675,7 +675,7 @@ local job = require('plenary.job'):new({
 })
 
 if job:sync()[1] == "'prefer-dark'" then
-    st('gruvbox', 'dark')
+    St('gruvbox', 'dark')
 elseif job:sync()[1] == "'prefer-light'" then
-    st('gruvbox', 'light')
+    St('gruvbox', 'light')
 end
