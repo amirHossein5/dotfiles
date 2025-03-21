@@ -648,14 +648,14 @@ function st(theme, background, no_bg)
 
     vim.cmd.colorscheme(theme)
 
+    if theme == 'gruvbox' then
+        vim.cmd([[highlight Normal guibg=#1c1c1c]])
+    end
+
     if no_bg then
         vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         vim.cmd([[hi SignColumn guibg=transparent]])
-    end
-
-    if theme == 'gruvbox' then
-        vim.cmd([[highlight Normal guibg=#1c1c1c]])
     end
 
     -- vim.cmd("highlight ColorColumn guibg=#0d0c0c")
