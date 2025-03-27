@@ -6,8 +6,6 @@ vim.opt.rnu = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -15,20 +13,11 @@ vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
+vim.opt.laststatus = 1
 vim.opt.colorcolumn = "80"
-vim.opt.updatetime = 50
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
 vim.g.mapleader = ' '
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set({ "n" }, "<leader>cn", ":cnext<CR>")
-vim.keymap.set({ "n" }, "<leader>cp", ":cprev<CR>")
-vim.keymap.set({ "n" }, "<leader>co", ":copen<CR>")
-vim.keymap.set({ "n" }, "<leader>cc", ":cclose<CR>")
-vim.cmd("autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR><C-w>o")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -36,18 +25,7 @@ vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("x", "<leader>p", [["_dp]])
-vim.keymap.set("x", "<leader>P", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<C-c>", ":nohls<CR>")
-vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-vim.keymap.set('n', "<leader>lv", ":e resources/views/<CR>")
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]])
-vim.keymap.set("v", "<leader>s", [[y:%s/<C-r>"//gc<Left><Left><Left>]])
-vim.keymap.set("n", "-", ":Ex<CR>")
 
 vim.api.nvim_create_autocmd("BufWinEnter", { pattern = '*.blade.php', callback = function() vim.opt.ft = 'html' end })
 
@@ -86,40 +64,6 @@ require('lazy').setup({ {
 
     config = function()
         vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-    end
-}, {
-    'folke/trouble.nvim',
-    keys = { "<leader>tr" },
-    cmd = "Trouble",
-
-    config = function()
-        require('trouble').setup({
-            fold_open = "v",      -- icon used for open folds
-            fold_closed = ">",    -- icon used for closed folds
-            indent_lines = false, -- add an indent guide below the fold icons
-            signs = {
-                -- icons / text used for a diagnostic
-                error = "error",
-                warning = "warn",
-                hint = "hint",
-                information = "info"
-            },
-            use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
-        })
-
-        vim.keymap.set("n", "<leader>tr", function()
-            require("trouble").toggle({
-                mode = 'diagnostics'
-            })
-        end)
-
-        vim.keymap.set("n", "[t", function()
-            require("trouble").next({ skip_groups = true, jump = true })
-        end)
-
-        vim.keymap.set("n", "]t", function()
-            require("trouble").previous({ skip_groups = true, jump = true })
-        end)
     end
 }, {
     'nvim-treesitter/nvim-treesitter',
@@ -274,21 +218,6 @@ require('lazy').setup({ {
             let g:fzf_vim.preview_window = ['hidden', 'ctrl-/']
             let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.87, 'yoffset': 0.3 } }
             let $FZF_DEFAULT_OPTS = '--bind ctrl-k:preview-up,ctrl-j:preview-down --bind alt-a:select-all,alt-d:deselect-all'
-            let g:fzf_colors =
-            \ { 'fg':    ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Comment'],
-            \ 'gutter':  ['bg', 'Normal'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-            \ 'hl+':     ['fg', 'Statement'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'border':  ['fg', 'Ignore'],
-            \ 'prompt':  ['fg', 'Conditional'],
-            \ 'pointer': ['fg', 'Exception'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment'] }
 
             function! s:build_quickfix_list(lines)
                 call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
@@ -347,70 +276,11 @@ require('lazy').setup({ {
         })
     end
 }, {
-    'numToStr/Comment.nvim',
-    dependencies = {
-        'JoosepAlviste/nvim-ts-context-commentstring'
-    },
-    config = function()
-        require('Comment').setup({
-            pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-        })
-    end
-}, {
-    {
-        'folke/tokyonight.nvim',
-        lazy = true,
-        config = function()
-            require("tokyonight").setup({
-                transparent = true,
-                style = "night",
-            })
-
-            vim.cmd("hi diffAdded guifg=#67a95b guibg=NONE")
-            vim.cmd("hi diffRemoved guifg=#FA5057 guibg=NONE")
-        end
-    },
-    {
-        'rose-pine/neovim',
-        lazy = true,
-        config = function()
-            require('rose-pine').setup({
-                variant = 'moon',
-                styles = {
-                    italic = false,
-                },
-                highlight_groups = {
-                    ["DiffAdd"] = { fg = '#67a95b', bg = 'NONE' },
-                    ["DiffDelete"] = { fg = '#FA5057', bg = 'NONE' },
-                }
-            })
-        end
-    },
-    { "morhetz/gruvbox", },
-    {
-        'LunarVim/darkplus.nvim',
-        lazy = true,
-        config = function()
-            -- SetTheme('darkplus')
-
-            vim.cmd("hi signColumn guibg=transparent")
-            vim.cmd("hi MsgArea guibg=transparent")
-            vim.cmd("hi ModeMsg guibg=transparent")
-            vim.cmd("hi Visual guibg=#0f354f")
-            vim.cmd("hi MatchParen guibg=#1f2e3f")
-
-            vim.cmd("hi TelescopeSelection guibg=#0f354f")
-            vim.cmd("hi TelescopeSelectionCaret guibg=#0f354f guifg=gray")
-
-            vim.cmd("hi DiffAdded guifg=#67a95b guibg=NONE")
-            vim.cmd("hi DiffRemoved guifg=#FA5057 guibg=NONE")
-        end
-    },
-}, {
     "brenoprata10/nvim-highlight-colors",
     config = function()
         vim.opt.termguicolors = true
         require('nvim-highlight-colors').setup({})
+        require("nvim-highlight-colors").turnOff()
     end
 }, {
     "laytan/cloak.nvim",
@@ -507,7 +377,6 @@ require('lazy').setup({ {
         require('mason-lspconfig').setup({
             ensure_installed = {
                 'cssls',
-                'ts_ls',
                 'emmet_language_server',
                 'intelephense',
                 'tailwindcss',
@@ -617,7 +486,6 @@ require('lazy').setup({ {
                 { name = 'nvim_lsp' },
                 { name = 'snippy' },
                 { name = 'path' },
-                { name = "supermaven" },
             }, {
                 { name = 'buffer' },
             })
@@ -635,6 +503,7 @@ require('lazy').setup({ {
         vim.opt.pumheight = 5
     end
 },
+    { "morhetz/gruvbox", },
 }, {
     change_detection = { notify = false },
     ui = { icons = { cmd = "⌘", config = "🛠", event = "📅", ft = "📂", init = "⚙", keys = "🗝", plugin = "🔌", runtime = "💻", require = "🌙", source = "📄", start = "🚀", task = "📌", lazy = "💤 ", }, },
@@ -653,27 +522,11 @@ function St(theme, background, no_bg)
     if no_bg then
         vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        vim.cmd([[hi SignColumn guibg=transparent]])
     end
 
-    -- vim.cmd("highlight ColorColumn guibg=#0d0c0c")
-
-    if background == "light" then
-        vim.cmd("let $BAT_THEME='gruvbox-light'");
-    else
-        vim.cmd("let $BAT_THEME='gruvbox-dark'");
-    end
+    vim.cmd("highlight ColorColumn guibg=#141414")
 
     vim.opt.background = background;
 end
 
-local job = require('plenary.job'):new({
-    command = 'gsettings',
-    args = { 'get', 'org.gnome.desktop.interface', 'color-scheme' },
-})
-
-if job:sync()[1] == "'prefer-dark'" then
-    St('gruvbox', 'dark')
-elseif job:sync()[1] == "'prefer-light'" then
-    St('gruvbox', 'light')
-end
+St('gruvbox', 'dark')
