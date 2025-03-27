@@ -9,7 +9,6 @@ plugins=( history-substring-search )
 
 source $ZSH/oh-my-zsh.sh
 
-alias cat="batcat"
 alias a="php artisan"
 alias am="php artisan migrate"
 alias amfs="php artisan migrate:fresh --seed"
