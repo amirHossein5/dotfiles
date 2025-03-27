@@ -1,0 +1,316 @@
+call plug#begin()
+" TODO(harpoon): Plug 'ThePrimeagen/harpoon'
+"        local harpoon = require("harpoon")
+"
+"        harpoon:setup()
+"
+"        vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+"        vim.keymap.set("n", "<leader>w", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+"
+"        vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+"        vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
+"        vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
+"        vim.keymap.set("n", "<C-m>", function() harpoon:list():select(4) end)
+"        vim.keymap.set("n", "<C-,>", function() harpoon:list():select(5) end)
+"        vim.keymap.set("n", "<C-.>", function() harpoon:list():select(6) end)
+
+" TODO: "laytan/cloak.nvim",
+"     config = function()
+"         require("cloak").setup({
+"             enabled = true,
+"             cloak_character = "*",
+"             highlight_group = "Comment",
+"             patterns = {
+"                 {
+"                     file_pattern = {
+"                         ".env*",
+"                     },
+"                     cloak_pattern = "=.+"
+"                 },
+"                 {
+"                     file_pattern = {
+"                         ".env.example",
+"                     },
+"                     cloak_pattern = {}
+"                 },
+"             },
+"         })
+"     end
+" }, {
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" TODO(<leader>pg): keys = { "<leader>pg" },
+"     require('telescope').setup({
+"         defaults = {
+"             mappings = {
+"                 i = {
+"                     ['<C-u>'] = false,
+"                 }
+"             },
+"             buffer_previewer_maker = new_maker,
+"         },
+"         extensions = {
+"             fzf = {
+"                 fuzzy = true,                   -- false will only do exact matching
+"                 override_generic_sorter = true, -- override the generic sorter
+"                 override_file_sorter = true,    -- override the file sorter
+"                 case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+"             },
+"             live_grep_args = {
+"                 mappings = {
+"                     i = {
+"                         ["<C-k>"] = lga_actions.quote_prompt(),
+"                     },
+"                 },
+"             }
+"         }
+"     })
+"     vim.keymap.set(
+"         'n',
+"         '<leader>pg',
+"         ":lua require('telescope').extensions.live_grep_args.live_grep_args({ vimgrep_arguments = { 'rg', '--hidden', '--ignore', '-g=!.git/**', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case' } }) <CR>"
+"     )
+" end
+
+Plug 'vim-test/vim-test'
+
+Plug 'mbbill/undotree',
+
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+
+" TODO: 'tpope/vim-eunuch'
+Plug 'tpope/vim-sleuth' " TODO: Test
+Plug 'tpope/vim-fugitive', {'tag': '*'}
+
+" TODO: brenoprata10/nvim-highlight-colors,
+
+
+" TODO: lsp
+"     "stevearc/conform.nvim",
+"     config = function()
+"         local conform = require('conform')
+" 
+"         conform.setup({
+"             formatters_by_ft = {
+"                 javascript = { "prettierd" },
+"                 javascriptreact = { "prettierd" },
+"                 typescript = { "prettierd" },
+"                 typescriptreact = { "prettierd" },
+"                 vue = { "prettierd" },
+"                 css = { "prettierd" },
+"                 json = { "prettierd" },
+"                 yaml = { "prettierd" },
+"                 markdown = { "prettierd" },
+"                 graphql = { "prettierd" },
+"                 html = { "blade-formatter" },
+"                 go = { 'goimports' },
+"             },
+"             formatters = {
+"                 ['blade-formatter'] = {
+"                     args = { "--stdin", "--wrap-attributes=aligned-multiple" },
+"                 },
+"             },
+"         })
+" 
+"         vim.keymap.set({ "n", "v" }, "<leader>f", function()
+"             conform.format({
+"                 lsp_fallback = true,
+"             })
+" 
+"             vim.cmd("write")
+"         end)
+"     end
+" }, {
+"     "neovim/nvim-lspconfig",
+"     config = function()
+"         vim.keymap.set('n', '[d', vim.diagnostic.goto_next)
+"         vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
+" 
+"         vim.api.nvim_create_autocmd('LspAttach', {
+"             group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+"             callback = function(ev)
+"                 vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+" 
+"                 local opts = { buffer = ev.buf }
+" 
+"                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+"                 vim.keymap.set('n', 'H', vim.lsp.buf.hover, opts)
+"                 vim.keymap.set({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, opts)
+"                 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+"                 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+"                 vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, opts)
+"             end,
+"         })
+"     end
+" }, {
+"     "williamboman/mason.nvim",
+"     dependencies = {
+"         "williamboman/mason-lspconfig",
+"         "neovim/nvim-lspconfig",
+"         "WhoIsSethDaniel/mason-tool-installer.nvim",
+"     },
+"     config = function()
+"         local lspconfig = require('lspconfig')
+"         local capabilities = require('cmp_nvim_lsp').default_capabilities()
+" 
+"         require("mason").setup()
+"         require('mason-lspconfig').setup({
+"             ensure_installed = {
+"                 'cssls',
+"                 'ts_ls',
+"                 'emmet_language_server',
+"                 'intelephense',
+"                 'tailwindcss',
+"                 'clangd',
+"             },
+"             automatic_installation = true,
+"             handlers = {
+"                 function(server_name)
+"                     lspconfig[server_name].setup({
+"                         capabilities = capabilities
+"                     })
+"                 end,
+" 
+"                 ["clangd"] = function()
+"                     lspconfig.clangd.setup({
+"                         on_attach = function(client)
+"                             client.server_capabilities.semanticTokensProvider = nil
+"                         end,
+"                         capabilities = capabilities,
+"                         cmd = {
+"                             "clangd",
+"                             "--fallback-style=webkit"
+"                         }
+"                     })
+"                 end,
+" 
+"                 ["pylsp"] = function()
+"                     lspconfig.pylsp.setup({
+"                         capabilities = capabilities,
+"                         settings = {
+"                             pylsp = {
+"                                 plugins = {
+"                                     rope_autoimport = {
+"                                         enabled = true
+"                                     }
+"                                 }
+"                             }
+"                         }
+"                     })
+"                 end,
+" 
+"                 ["ts_ls"] = function()
+"                     lspconfig.ts_ls.setup {
+"                         on_attach = function(client)
+"                             client.server_capabilities.semanticTokensProvider = nil
+"                         end,
+"                     }
+"                 end,
+" 
+"                 ["lua_ls"] = function()
+"                     lspconfig.lua_ls.setup {
+"                         capabilities = capabilities,
+"                         settings = {
+"                             Lua = {
+"                                 diagnostics = {
+"                                     globals = { "vim" },
+"                                 },
+"                                 workspace = {
+"                                     library = {
+"                                         [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+"                                         [vim.fn.stdpath("config") .. "/lua"] = true,
+"                                     }
+"                                 }
+"                             }
+"                         }
+"                     }
+"                 end,
+"             },
+"         })
+" 
+"         require("mason-tool-installer").setup({
+"             ensure_installed = {
+"                 -- "prettierd", "oxlint", "blade-formatter", "goimports"
+"             }
+"         })
+"     end
+" }, {
+"     "hrsh7th/nvim-cmp",
+"     dependencies = {
+"         'neovim/nvim-lspconfig',
+"         'hrsh7th/cmp-nvim-lsp',
+"         'hrsh7th/cmp-buffer',
+"         'hrsh7th/cmp-path',
+" 
+"         'dcampos/nvim-snippy',
+"         'dcampos/cmp-snippy',
+"     },
+"     config = function()
+"         local cmp = require('cmp')
+" 
+"         cmp.setup({
+"             snippet = {
+"                 expand = function(args)
+"                     require('snippy').expand_snippet(args.body)
+"                 end
+"             },
+"             mapping = cmp.mapping.preset.insert({
+"                 ['<C-y>'] = cmp.mapping(function()
+"                     if not cmp.visible() then cmp.complete() end
+"                     cmp.confirm({ select = true })
+"                 end),
+"                 ['<c-j>'] = cmp.mapping.scroll_docs(4),
+"                 ['<c-k>'] = cmp.mapping.scroll_docs(-4),
+"                 ['<C-Space>'] = cmp.mapping.complete(),
+"             }),
+"             sources = cmp.config.sources({
+"                 { name = 'nvim_lsp' },
+"                 { name = 'snippy' },
+"                 { name = 'path' },
+"                 { name = "supermaven" },
+"             }, {
+"                 { name = 'buffer' },
+"             })
+"         })
+" 
+"         require('snippy').setup({
+"             mappings = {
+"                 is = {
+"                     ['<c-l>'] = 'next',
+"                     ['<c-h>'] = 'previous',
+"                 },
+"             }
+"         })
+" 
+"         vim.opt.pumheight = 5
+"     end
+" },
+call plug#end()
+
+set nocompatible
+set termguicolors
+set nu
+set rnu
+set nowrap
+set shortmess-=S
+set colorcolumn=80
+set incsearch
+let mapleader=' '
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+set noswapfile
+set nobackup
+set undodir=~/.vim/.undodir
+set undofile
+
+" vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+autocmd BufWinEnter *.blade.php set ft=html
+
+colorscheme retrobox
+set background=dark
+highlight ColorColumn guibg=#141414

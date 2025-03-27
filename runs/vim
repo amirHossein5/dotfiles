@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+sudo apt install vim-gtk
+
+git clone https://github.com/vim/vim.git $HOME/vim
+cd $HOME/vim
+git fetch
+git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+make && cp src/vim $HOME/.local/bin/vim
+
+sudo rm -rf /usr/local/share/vim
+sudo cp -r . /usr/local/share/vim
+mkdir ~/.vim/.undodir
