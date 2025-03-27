@@ -21,7 +21,6 @@ vim.opt.updatetime = 50
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.mapleader = ' '
-vim.cmd([[syntax off]])
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
