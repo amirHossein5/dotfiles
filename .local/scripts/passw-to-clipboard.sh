@@ -6,9 +6,4 @@ if [[ -z $selected ]]; then
     exit 0
 fi
 
-DECRYPTED=$(openssl aes-256-cbc -a -d -pbkdf2 -salt -in ${selected})
-if [ $? -eq 0 ]; then
-    clear
-    echo -n $DECRYPTED
-    wl-copy $DECRYPTED
-fi
+echo $(openssl aes-256-cbc -a -d -pbkdf2 -salt -in ${selected}) | wl-copy
