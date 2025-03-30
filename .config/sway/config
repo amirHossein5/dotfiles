@@ -91,7 +91,7 @@ input "type:touchpad" {
     # Exit sway (logs you out of your Wayland session)
     bindsym --to-code $super+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
-    bindsym $super+Escape exec swaylock -f -c 000000
+    bindsym $super+Escape exec swaylock -f
 
     bindsym XF86MonBrightnessUp exec brightnessctl set +5% && pkill -RTMIN+9 i3blocks
     bindsym XF86MonBrightnessdown exec brightnessctl set 5%- && pkill -RTMIN+9 i3blocks
