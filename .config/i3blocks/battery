@@ -6,4 +6,9 @@ if [ -f "/sys/class/power_supply/BAT0/status" ]; then
     consumption=$(awk '{print $1*10^-6 "W"}' /sys/class/power_supply/BAT0/power_now)
 
     echo 'BAT:' $battery_capacity'% ('$battery_status') - '$consumption
+    echo
+
+    if (( $battery_capacity < 30 )); then
+        echo \#FF0000
+    fi
 fi
