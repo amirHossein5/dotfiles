@@ -531,3 +531,5 @@ function St(theme, background, no_bg)
 end
 
 St('gruvbox', 'dark')
+
+vim.cmd([[ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR> ]])
